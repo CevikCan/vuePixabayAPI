@@ -6,13 +6,13 @@
         </div>
       </transition>
     <div class="row">
-      <div class="col-9">
+      <div class="col-md-9">
         <video width="800" height="350" controls>
             <source :src="getSelectVideo.videoURL" type="video/webm">
         </video>         
       </div>
-      <div class="col-3">
-        <div class="row">
+      <div class="col-md-3">
+        <div class="row userBox">
           <div class="col-4">
             <img :src="getSelectVideo.userImageURL" alt="..." class="rounded-circle w-100">
           </div>
@@ -23,7 +23,7 @@
                   </div>
               </div>
               <div class="row">
-           <div class="col-4">
+           <div class="col-md-4">
             <button type="button" class="btn btn-success btn-sm mt-1">Follow</button>
            </div>          
           </div>
@@ -112,5 +112,18 @@ export default {
 .fade-leave-active {
   transition: opacity .3s ease;
   opacity: 0;
+}
+@media only screen and (max-width: 760px) {
+  video {
+    width:460px;
+    height: 170px;
+  }
+  .userBox img{
+    width:140px;
+    height: 70px;
+  }
+  .userBox {
+    margin-top:30px;   
+  }
 }
 </style>

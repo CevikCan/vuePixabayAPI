@@ -6,11 +6,11 @@
         </div>
       </transition>
     <div class="row">
-      <div class="col-9">
+      <div class="col-lg-9">
         <img :src="getSelectPhoto.largeImageURL" class="w-100">          
       </div>
-      <div class="col-3">
-        <div class="row">
+      <div class="col-lg-3">
+        <div class="row userBox">
           <div class="col-4">
             <img :src="getSelectPhoto.userPhoto" alt="..." class="rounded-circle w-100">
           </div>
@@ -21,7 +21,7 @@
                   </div>
               </div>
               <div class="row">
-           <div class="col-4">
+           <div class="col-md-4">
             <button type="button" class="btn btn-success btn-sm mt-1">Follow</button>
            </div>          
           </div>
@@ -38,7 +38,7 @@
         </div>
         <hr>
         <div class="row">
-            <div class="col-12 photoDetail d-flex flex-column">               
+            <div class="col-md-12 photoDetail d-flex flex-column">               
                 <div>Type : {{ getSelectPhoto.type }} </div>
                 <div>Resolution : {{ getSelectPhoto.photoWidth }} x {{ getSelectPhoto.photoHeight }} </div>
                 <div>Views : {{ getSelectPhoto.views }} </div>
@@ -50,7 +50,7 @@
         <div class="row">
             <div class="col">Related Photos</div>
             <div class="row mt-3">
-                <div class="col d-flex flex-wrap">
+                <div class="col d-flex flex-wrap justify-content-center">
                   <div class="relatedPhoto" v-for="item in relatedPhotos" v-bind:key="item.id">
                     <a href="#">
                       <img :src="item.largeImageURL">
@@ -135,5 +135,23 @@ export default {
 .fade-leave-active {
   transition: opacity .3s ease;
   opacity: 0;
+}
+@media only screen and (max-width:767px) {
+  .userBox img{
+    width:100px;
+    height: 70px;
+  }
+   .userBox {
+    margin-top:30px;
+  }
+}
+@media only screen and (max-width:991px) {
+  .userBox img{
+    width:120px;
+    height: 90px;
+  }
+  .userBox {
+    margin-top:30px;
+  }
 }
 </style>
